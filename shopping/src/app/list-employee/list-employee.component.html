@@ -1,0 +1,38 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employee">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.address }}</td>
+        <td>
+            <button class="badge badge-warning" routerLink="/edit/{{ emp.id }}">Edit</button>
+            <button data-toggle="modal" data-target="#delete" class="badge badge-danger" data-id="" (click)="deleteEmployee(emp.id)"> Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">Do you want to delete ?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" type="button" data-dismiss="modal" (click) = "delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

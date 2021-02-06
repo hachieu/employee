@@ -1,0 +1,29 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Add Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="alert alert-success alert-dismissible" *ngIf = "submitted">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong> Indicates a successful or positive action.
+          </div>
+        <div class="form-group">
+            <label> Full Name</label>
+            <input type="text" class ="form-control" id = "name"
+                [(ngModel)] = "employee.name" name = "name">
+        </div>
+    
+        <div class="form-group">
+            <label> Address</label>
+            <input type="text" class ="form-control" id = "address"
+                [(ngModel)] = "employee.address" name = "address">
+        </div>
+
+        <div class="form-group">
+            <label>File</label>
+            <input type="file" [(ngModel)] = "employee.image" name="image" (change)="selectFile($event)" />
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

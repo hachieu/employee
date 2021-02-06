@@ -1,0 +1,13 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Upload File </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label>File</label>
+            <input type="file" (change)="selectFile($event)" />
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Upload</button>
+    
+    </form>
+    </div> 
